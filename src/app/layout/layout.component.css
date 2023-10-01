@@ -1,0 +1,15 @@
+.contenedor {
+  margin: 0; /* Elimina los márgenes */
+  padding: 0; /* Elimina el espacio interno (si lo hay) */
+  width: 100%; /* Establece el ancho al 100% */
+  box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+}
+
+.contenedor {
+  display: grid;
+  grid-template-columns: 280px 1fr; /* Divide el contenedor en dos columnas, la barra lateral ocupa 1 fracción y el contenido ocupa 3 fracciones */
+}
+
+.contenido {
+  margin: 3rem 4rem 0 4rem;
+}

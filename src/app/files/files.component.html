@@ -1,0 +1,6 @@
+<p>Subir video</p>
+<input type="file" (change)="uploadFile($event)" accept="video/*">
+
+<div class="files">
+  <video [src]="file" *ngFor="let file of files" width="800" controls></video>
+</div>

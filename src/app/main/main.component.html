@@ -1,0 +1,28 @@
+<div class="actividad card" style="width: auto">
+  <div class="card-body">
+    <h5 class="card-title">Actividad Recomendada</h5>
+    <p class="card-text">
+      Descubre nuestra actividad recomendada para fortalecer tus habilidades en
+      pensamiento algorítmico. Esta desafiante tarea te invita a resolver un
+      problema real, aplicando conceptos de algoritmos y lógica. Prepárate para
+      un ejercicio estimulante que te ayudará a desarrollar tu pensamiento
+      crítico y tu capacidad de resolución de problemas. ¡Acepta el desafío y
+      mejora tus habilidades hoy!
+    </p>
+    <a href="#" class="btn btn-primary">Entrar a la actividad</a>
+  </div>
+</div>
+
+<div class="cards-container mt-5">
+  <article class="carta" *ngFor="let carta of cartas">
+    <div
+      class="carta-img"
+      [style.background-image]="'url(' + carta.Image + ')'"
+    ></div>
+    <div class="carta-contenido">
+      <h5>{{ carta.title }}</h5>
+      <p>{{ carta.descripcion }}</p>
+      <a href="" class="btn btn-primary">Entrar</a>
+    </div>
+  </article>
+</div>
