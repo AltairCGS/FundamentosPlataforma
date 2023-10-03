@@ -1,9 +1,7 @@
 <div class="perfil card" style="width: auto" *ngIf="auth.user$ | async as user">
   <div class="card-body">
-    <h5 class="card-title">{{user.name}}</h5>
-    <img src="{{user.picture}}" alt="" class="rounded-circle">
+    <h5 class="card-title">{{ user.name }}</h5>
+    <img src="{{ user.picture }}" alt="" class="rounded-circle" />
   </div>
 </div>
-<div class="contenido">
-  
-</div>
+<div class="contenido"></div>

@@ -15,6 +15,8 @@ import { FilesComponent } from './files/files.component';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ProfileProfeComponent } from './profile-profe/profile-profe.component';
+import { NotasComponent } from './notas/notas.component';
+import { EjercicioComponent } from './ejercicio/ejercicio.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,9 @@ import { ProfileProfeComponent } from './profile-profe/profile-profe.component';
     FilesComponent,
     HeaderComponent,
     SidebarComponent,
-    ProfileProfeComponent
+    ProfileProfeComponent,
+    NotasComponent,
+    EjercicioComponent
   ],
   imports: [
     BrowserModule,

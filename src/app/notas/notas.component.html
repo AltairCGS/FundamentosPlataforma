@@ -1,0 +1,26 @@
+<div class="perfil card" style="width: auto" *ngIf="auth.user$ | async as user">
+  <div class="card-body">
+    <h5 class="card-title">{{ user.name }}</h5>
+    <img src="{{ user.picture }}" alt="" class="rounded-circle" />
+  </div>
+</div>
+<div class="contenido mt-4">
+  <div class="notas titulos">
+    <div class="estudiante">Estudiante</div>
+    <div class="actividad1">Actividad 1</div>
+    <div class="actividad2">Actividad 2</div>
+    <div class="actividad3">Actividad 3</div>
+  </div>
+  <div class="notas">
+    <div class="estudiante">Estudiante 1</div>
+    <div class="actividad1"><a routerLink="/ejercicio">Actividad 1 para Estudiante 1</a></div>
+    <div class="actividad2"><a href="">Actividad 2 para Estudiante 1</a></div>
+    <div class="actividad3"><a href="">Actividad 3 para Estudiante 1</a></div>
+  </div>
+  <div class="notas">
+    <div class="estudiante">Estudiante 2</div>
+    <div class="actividad1"><a href="">Actividad 1 para Estudiante 2</a></div>
+    <div class="actividad2"><a href="">Actividad 2 para Estudiante 2</a></div>
+    <div class="actividad3"><a href="">Actividad 3 para Estudiante 2</a></div>
+  </div>
+</div>

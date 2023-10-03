@@ -1,0 +1,51 @@
+.ejercicio {
+  display: grid;
+  grid-template-rows: 1fr 1fr; /* Dos filas de igual altura */
+  grid-template-columns: 40% 60%; /* Dos columnas, la primera ocupa el 40% y la segunda el 60% */
+  gap: 10px; /* Espacio entre las celdas */
+  height: 100%;
+}
+
+/* Estilos para los elementos */
+.instrucciones {
+  grid-row: 1 / 2; /* Ocupa la primera fila */
+  grid-column: 1 / 2; /* Ocupa la primera columna */
+  background-color: #e0e0e0; /* Color de fondo para demostración */
+  padding: 10px;
+}
+
+.solucion {
+  grid-row: 1 / 2; /* Ocupa la primera fila */
+  grid-column: 2 / 3; /* Ocupa la segunda columna */
+  background-color: #e0e0e0; /* Color de fondo para demostración */
+  padding: 10px;
+}
+
+.explicacion {
+  grid-row: 2 / 3; /* Ocupa la segunda fila */
+  grid-column: 1 / 2; /* Ocupa la primera columna */
+  background-color: #f0f0f0; /* Color de fondo para demostración */
+  padding: 10px;
+}
+
+.test {
+  grid-row: 2 / 3; /* Ocupa la segunda fila */
+  grid-column: 2 / 3; /* Ocupa la segunda columna */
+  background-color: #f0f0f0; /* Color de fondo para demostración */
+  padding: 10px;
+}
+
+.instrucciones-contenedor {
+  height: 500px;
+  background-color: white;
+  padding: 2rem;
+}
+
+.textarea-full-size {
+  width: 100%;
+  height: 500px;
+  resize: none; /* Evita que el usuario pueda redimensionar el textarea */
+  font-family: "Courier New", monospace; /* Cambia la fuente a una fuente monoespaciada */
+  color: #333; /* Cambia el color del texto */
+  padding: 10px; /* Añade un relleno */
+}
