@@ -1,6 +1,48 @@
-<p>Subir video</p>
-<input type="file" (change)="uploadFile($event)" accept="video/*">
+<form [formGroup]="formulario" (ngSubmit)="enviarFormulario()">
+  <div class="form-group">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" formControlName="nombre">
+  </div>
 
-<div class="files">
-  <video [src]="file" *ngFor="let file of files" width="800" controls></video>
+  <div class="form-group">
+    <label for="descripcion">Descripción:</label>
+    <input type="text" id="descripcion" formControlName="descripcion">
+  </div>
+
+  <div class="form-group">
+    <label for="url">URL:</label>
+    <input type="text" id="url" formControlName="url">
+  </div>
+
+  <button type="submit" [disabled]="!formulario.valid">Enviar</button>
+</form>
+
+<div *ngFor="let item of datos">
+  <h2>{{ item.nombre }}</h2>
+  <p>{{ item.descripcion }}</p>
+  <iframe width="560" height="315" [src]="getYouTubeEmbedUrl(item.url)"></iframe>
+  <button (click)="confirmarEliminacion(item.id)">Eliminar</button>
+  <button (click)="iniciarModificacion(item)">Modificar</button>
+</div>
+
+<div *ngIf="mostrarFormularioModificacion">
+  <form [formGroup]="formularioModificacion" (ngSubmit)="modificarElemento()">
+    <div class="form-group">
+      <label for="id">ID:</label>
+      <input type="text" id="id" formControlName="id" readonly>
+    </div>
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" formControlName="nombre">
+    </div>
+    <div class="form-group">
+      <label for="descripcion">Descripción:</label>
+      <input type="text" id="descripcion" formControlName="descripcion">
+    </div>
+    <div class="form-group">
+      <label for="url">URL:</label>
+      <input type="text" id="url" formControlName="url">
+    </div>
+    <button type="submit" [disabled]="!formularioModificacion.valid" (click)="confirmarModificacion()">Modificar</button>
+  </form>
 </div>

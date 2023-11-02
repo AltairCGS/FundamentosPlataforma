@@ -1,24 +1,19 @@
-<div class="ejercicio">
+<div class="ejercicio" *ngFor="let ejercicio of ejercicioData">
   <div class="instrucciones">Instrucciones
     <div class="instrucciones-contenedor">
-      <p>Write a function that takes an integer as input, and returns the number of bits that are equal to one in the binary representation of that number. You can guarantee that input is non-negative.</p>
-      <p>Example: The binary representation of 1234 is 10011010010, so the function should return 5 in this case</p>
+      <p>{{ejercicio.descripcion}}</p>
     </div>
   </div>
   <div class="solucion">Solución
     <div class="form-floating">
-      <textarea class="form-control textarea-full-size" placeholder="Escribe tu solución aquí">
-public class BitCounting {
-
-  public static int countBits(int n){
-    // Show me the code!
-  }
-  
-}
+      <textarea class="form-control textarea-full-size" placeholder="Escribe tu solución aquí" [(ngModel)]="ejercicio.solucion">
       </textarea>
       <label for="solucionTextarea">Solución</label>
     </div>
   </div>
-  <div class="explicacion">Explicacione</div>
+  <div class="explicacion">Explicaciones</div>
   <div class="test">Test</div>
+  <div class="guardar">
+    <button (click)="guardarEjercicio(ejercicio)">Guardar</button>
+  </div>
 </div>

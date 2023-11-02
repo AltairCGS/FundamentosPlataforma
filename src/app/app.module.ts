@@ -17,6 +17,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { ProfileProfeComponent } from './profile-profe/profile-profe.component';
 import { NotasComponent } from './notas/notas.component';
 import { EjercicioComponent } from './ejercicio/ejercicio.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,10 +30,13 @@ import { EjercicioComponent } from './ejercicio/ejercicio.component';
     SidebarComponent,
     ProfileProfeComponent,
     NotasComponent,
-    EjercicioComponent
+    EjercicioComponent,
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
     AppRoutingModule,
     AuthModule.forRoot({
       domain: 'dev-01zd21ssgzmznj46.us.auth0.com',

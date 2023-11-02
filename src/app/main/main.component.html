@@ -14,14 +14,14 @@
 </div>
 
 <div class="cards-container mt-5">
-  <article class="carta" *ngFor="let carta of cartas">
+  <article class="carta" *ngFor="let contenido of contenidos">
     <div
       class="carta-img"
-      [style.background-image]="'url(' + carta.Image + ')'"
+      [style.background-image]="'url(' + contenido.imagen + ')'"
     ></div>
     <div class="carta-contenido">
-      <h5>{{ carta.title }}</h5>
-      <p>{{ carta.descripcion }}</p>
+      <h5>{{ contenido.titulo }}</h5>
+      <p>{{ contenido.descripcion }}</p>
       <a href="" class="btn btn-primary">Entrar</a>
     </div>
   </article>
