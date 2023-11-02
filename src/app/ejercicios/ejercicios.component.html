@@ -1,0 +1,57 @@
+
+<form [formGroup]="formulario" (ngSubmit)="enviarFormulario()">
+  <div class="form-group">
+    <label for="titulo">Título:</label>
+    <input type="text" id="titulo" formControlName="titulo">
+  </div>
+
+  <div class="form-group">
+    <label for="descripcion">Descripción:</label>
+    <input type="text" id="descripcion" formControlName="descripcion">
+  </div>
+
+  <div class="form-group">
+    <label for="lenguaje">Lenguaje:</label>
+    <input type="text" id="lenguaje" formControlName="lenguaje">
+  </div>
+
+  <div class="form-group">
+    <label for="dificultad">Dificultad:</label>
+    <input type="text" id="dificultad" formControlName="dificultad">
+  </div>
+
+  <div class="form-group">
+    <label for="solucion">Solucion:</label>
+    <input type="text" id="solucion" formControlName="solucion">
+  </div>
+
+  <div class="form-group">
+    <label for="explicacion">Explicación:</label>
+    <input type="text" id="explicacion" formControlName="explicacion">
+  </div>
+
+  <div class="form-group">
+    <label for="test">Test:</label>
+    <input type="text" id="test" formControlName="test">
+  </div>
+
+  <button type="submit" [disabled]="!formulario.valid">Enviar</button>
+</form>
+
+<div class="ejercicios-lista">
+  <div *ngFor="let ejercicio of ejercicios" class="ejercicio-card">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ ejercicio.titulo }}</h5>
+        <p class="card-text">Descripción: {{ ejercicio.descripcion }}</p>
+        <p class="card-text">Lenguaje: {{ ejercicio.lenguaje }}</p>
+        <p class="card-text">Dificultad: {{ ejercicio.dificultad }}</p>
+        <p class="card-text">Solución: {{ ejercicio.solucion }}</p>
+        <p class="card-text">Explicación: {{ ejercicio.explicacion }}</p>
+        <p class="card-text">Test: {{ ejercicio.test }}</p>
+        <a routerLink="/ejercicio" class="btn btn-primary">Entrar a la actividad</a>
+        <button (click)="confirmarEliminacion(ejercicio.id)">Eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>

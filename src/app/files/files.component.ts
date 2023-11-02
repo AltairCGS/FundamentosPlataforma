@@ -115,8 +115,7 @@ export class FilesComponent implements OnInit{
       const embedUrl = `https://www.youtube.com/embed/${videoId}`;
       return this.sanitizer.bypassSecurityTrustResourceUrl(embedUrl);
     } else {
-      // Si no se pudo extraer el videoId, puedes tomar una acción por defecto.
-      // Aquí simplemente devolvemos una URL segura vacía.
+
       return this.sanitizer.bypassSecurityTrustResourceUrl('');
     }
   }

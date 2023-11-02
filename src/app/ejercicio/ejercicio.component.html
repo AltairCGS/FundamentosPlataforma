@@ -1,4 +1,4 @@
-<div class="ejercicio" *ngFor="let ejercicio of ejercicioData">
+<div class="ejercicio" *ngFor="let ejercicio of ejercicioData.slice(0,1)">
   <div class="instrucciones">Instrucciones
     <div class="instrucciones-contenedor">
       <p>{{ejercicio.descripcion}}</p>
