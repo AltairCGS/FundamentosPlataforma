@@ -1,0 +1,13 @@
+<div class="mt-4">
+  <div class="row">
+    <div class="col-md-12 mb-4" *ngFor="let unidad of unidades">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ unidad.titulo }}</h5>
+          <p class="card-text">{{ unidad.descripcion }}</p>
+          <button class="btn btn-primary" routerLink="/unidad">Acceder</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,90 @@
+<div class="container mt-4">
+  <h2>Introducción a Algoritmos</h2>
+
+  <p>
+    Bienvenido a la unidad de "Introducción a Algoritmos". En esta unidad, exploraremos los conceptos fundamentales
+    de los algoritmos y cómo aplicarlos para resolver problemas de manera eficiente.
+  </p>
+
+  <!-- Espacio para el primer video -->
+  <div class="mb-4" *ngFor="let item of datos.slice(0,1)">
+    <div class="card d-flex flex-column h-100">
+      <div class="card-body">
+        <h2 class="card-title">{{ item.nombre }}</h2>
+        <p class="card-text">{{ item.descripcion }}</p>
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe width="560" height="315" class="embed-responsive-item" [src]="getYouTubeEmbedUrl(item.url)" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p>
+    Continuaremos nuestro viaje aprendiendo sobre la lógica y cómo se relaciona con los algoritmos.
+  </p>
+
+  <!-- Espacio para la primera actividad -->
+  <div class="mb-4" *ngFor="let item of ejercicios.slice(0,1)">
+    <h4>Actividad 1: {{item.titulo}}</h4>
+    <p>
+      Completa la siguiente actividad para aplicar los conceptos que has aprendido hasta ahora.
+    </p>
+    <div *ngFor="let ejercicio of ejercicios.slice(0,1)" class="row mb-4 mt-3">
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{ ejercicio.titulo }}</h5>
+            <p class="card-text"><strong>Descripción:</strong> {{ ejercicio.descripcion }}</p>
+            <p class="card-text"><strong>Lenguaje:</strong> {{ ejercicio.lenguaje }}</p>
+            <p class="card-text"><strong>Dificultad:</strong> {{ ejercicio.dificultad }}</p>
+            <p class="card-text"><strong>Solución:</strong> {{ ejercicio.solucion }}</p>
+            <p class="card-text"><strong>Explicación:</strong> {{ ejercicio.explicacion }}</p>
+            <p class="card-text"><strong>Test:</strong> {{ ejercicio.test }}</p>
+            <a [routerLink]="['/ejercicio', ejercicio.id]" class="btn btn-primary mr-2">Entrar a la actividad</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Agrega aquí el contenido específico de la actividad -->
+  </div>
+
+  <!-- Espacio para el segundo video -->
+  <div class="mb-4" *ngFor="let item of datos.slice(1,2)">
+    <div class="card d-flex flex-column h-100">
+      <div class="card-body">
+        <h2 class="card-title">{{ item.nombre }}</h2>
+        <p class="card-text">{{ item.descripcion }}</p>
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe width="560" height="315" class="embed-responsive-item" [src]="getYouTubeEmbedUrl(item.url)" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p>
+    Concluiremos esta unidad con una revisión de los principales conceptos y desafíos que enfrentarás.
+  </p>
+
+  <!-- Espacio para la segunda actividad -->
+  <div class="mb-4" *ngFor="let item of ejercicios.slice(1,2)">
+    <h4>Actividad 2: {{item.titulo}}</h4>
+    <p>
+      Aplica tus conocimientos resolviendo la siguiente actividad práctica.
+    </p>
+    <div *ngFor="let ejercicio of ejercicios.slice(1,2)" class="row mb-4 mt-3">
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{ ejercicio.titulo }}</h5>
+            <p class="card-text"><strong>Descripción:</strong> {{ ejercicio.descripcion }}</p>
+            <p class="card-text"><strong>Lenguaje:</strong> {{ ejercicio.lenguaje }}</p>
+            <p class="card-text"><strong>Dificultad:</strong> {{ ejercicio.dificultad }}</p>
+            <p class="card-text"><strong>Solución:</strong> {{ ejercicio.solucion }}</p>
+            <p class="card-text"><strong>Explicación:</strong> {{ ejercicio.explicacion }}</p>
+            <p class="card-text"><strong>Test:</strong> {{ ejercicio.test }}</p>
+            <a [routerLink]="['/ejercicio', ejercicio.id]" class="btn btn-primary mr-2">Entrar a la actividad</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

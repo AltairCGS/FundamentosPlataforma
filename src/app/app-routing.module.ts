@@ -8,6 +8,8 @@ import { ProfileProfeComponent } from './profile-profe/profile-profe.component';
 import { NotasComponent } from './notas/notas.component';
 import { EjercicioComponent } from './ejercicio/ejercicio.component';
 import { EjerciciosComponent } from './ejercicios/ejercicios.component';
+import { UnidadesComponent } from './unidades/unidades.component';
+import { UnidadComponent } from './unidad/unidad.component';
 
 const routes: Routes = [
   {
@@ -41,6 +43,14 @@ const routes: Routes = [
       {
         path: 'ejercicios',
         component: EjerciciosComponent
+      },
+      {
+        path: 'unidades',
+        component: UnidadesComponent
+      },
+      {
+        path: 'unidad',
+        component: UnidadComponent
       },
       {
         path: 'login',

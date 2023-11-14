@@ -20,6 +20,8 @@ import { EjercicioComponent } from './ejercicio/ejercicio.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EjerciciosComponent } from './ejercicios/ejercicios.component';
+import { UnidadesComponent } from './unidades/unidades.component';
+import { UnidadComponent } from './unidad/unidad.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +35,8 @@ import { EjerciciosComponent } from './ejercicios/ejercicios.component';
     NotasComponent,
     EjercicioComponent,
     EjerciciosComponent,
+    UnidadesComponent,
+    UnidadComponent,
   ],
   imports: [
     BrowserModule,
