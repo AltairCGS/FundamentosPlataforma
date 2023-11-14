@@ -1,4 +1,48 @@
-<div class="px-4 py-5 my-5 text-center">
+<header data-bs-theme="dark">
+  <nav
+    class="navbar navbar-expand-md navbar-dark fixed-top"
+    style="background-color: #4f1f8c"
+  >
+    <div class="container-fluid">
+      <a class="navbar-brand disabled">Algorithmic Mind</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarCollapse"
+        aria-controls="navbarCollapse"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true"></a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <button
+            type="button"
+            (click)="login()"
+            class="btn btn-light"
+            style="color: black; border: none"
+          >
+            Iniciar Sesión
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- <div class="px-4 py-5 my-5 text-center">
   <img class="d-block mx-auto mb-4" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Escudo_Universidad_de_Medellin.svg/1200px-Escudo_Universidad_de_Medellin.svg.png" alt="" width="100" height="100">
   <h1 class="display-5 fw-bold text-body-emphasis">Algorithmic Mind</h1>
   <div class="col-lg-6 mx-auto">
@@ -7,4 +51,172 @@
       <button type="button" (click)="login()" class="btn btn-primary btn-lg px-4 gap-3">Iniciar sesión</button>
     </div>
   </div>
-</div>
+</div> -->
+
+<main style="padding-top: 56px">
+  <div
+    id="carouselExampleAutoplaying"
+    class="carousel slide"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div
+          class="imagen d-block w-100"
+          style="
+            background-image: url(https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+          "
+        ></div>
+        <!-- <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="..." style="height: 500px; object-fit: cover;"> -->
+      </div>
+      <div class="carousel-item">
+        <div
+          class="imagen d-block w-100"
+          style="
+            background-image: url(https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+          "
+        ></div>
+      </div>
+      <div class="carousel-item">
+        <div
+          class="imagen d-block w-100"
+          style="
+            background-image: url(https://upload.wikimedia.org/wikipedia/commons/6/64/Plaza_de_la_Libertad_-_Universidad_de_Medell%C3%ADn.jpg);
+            height: 500px;
+            background-size: cover;
+            background-position: top;
+          "
+        ></div>
+      </div>
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleAutoplaying"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleAutoplaying"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div class="container marketing">
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider" />
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">
+          Bienvenido a Algorithmic Mind
+          <span class="text-body-secondary"
+            >¡Desata tu Potencial con el Pensamiento Algorítmico!</span
+          >
+        </h2>
+        <p class="lead">
+          Bienvenido a Algorithmic Mind, el lugar donde la creatividad y la
+          lógica se encuentran para potenciar tu pensamiento algorítmico. En
+          esta sección, descubrirás herramientas innovadoras y recursos
+          educativos diseñados para mejorar tus habilidades en la resolución de
+          problemas y la creación de algoritmos. Prepárate para un viaje
+          transformador hacia un pensamiento más estructurado y eficiente.
+        </p>
+      </div>
+      <div class="col-md-5">
+        <img
+          src="assets/Logo Proyecto PNG.png"
+          alt=""
+          style="height: 500px; width: 500px"
+        />
+      </div>
+    </div>
+
+    <hr class="featurette-divider" />
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading fw-normal lh-1">
+          Por qué el Pensamiento Algorítmico Importa
+          <span class="text-body-secondary"
+            >Descubre el Poder de la Lógica en el Mundo Digital</span
+          >
+        </h2>
+        <p class="lead">
+          El pensamiento algorítmico es la clave para desbloquear nuevas
+          posibilidades en el mundo digital. En esta sección, exploraremos la
+          importancia de entender y aplicar algoritmos en tu vida diaria y en tu
+          carrera. Desde la optimización de procesos hasta la toma de decisiones
+          informada, aprenderás cómo el pensamiento algorítmico puede marcar la
+          diferencia en un mundo cada vez más impulsado por la tecnología.
+        </p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img
+          src="https://images.unsplash.com/photo-1617791160536-598cf32026fb?q=80&w=2564&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt=""
+          style="height: 500px; width: 500px; object-fit: cover"
+        />
+      </div>
+    </div>
+
+    <hr class="featurette-divider" />
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">
+          Cómo Algorithmic Mind Puede Ayudarte
+          <span class="text-body-secondary"
+            >Transforma tu Enfoque con Nuestros Recursos Exclusivos</span
+          >
+        </h2>
+        <p class="lead">
+          En Algorithmic Mind, te ofrecemos herramientas
+          especializadas, cursos interactivos y desafíos estimulantes diseñados
+          para elevar tu pensamiento algorítmico al siguiente nivel. Ya sea que
+          seas un principiante curioso o un profesional en busca de
+          perfeccionamiento, nuestra plataforma te brinda el apoyo que
+          necesitas. Descubre la magia de resolver problemas de manera
+          sistemática y conviértete en un maestro del pensamiento algorítmico
+          con Algorithmic Mind. ¡Empezar es fácil, el cambio es
+          significativo!
+        </p>
+      </div>
+      <div class="col-md-5">
+        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=2669&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" style="height: 500px; width: 500px; object-fit: cover">
+      </div>
+    </div>
+
+    <hr class="featurette-divider" />
+
+    <!-- /END THE FEATURETTES -->
+  </div>
+  <!-- /.container -->
+
+  <!-- FOOTER -->
+  <footer class="container">
+    <p class="float-end"><a href="#">Regresar al inicio</a></p>
+    <p>
+      © 2023 Algorithmic Mind
+      
+    </p>
+  </footer>
+</main>

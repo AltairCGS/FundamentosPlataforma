@@ -2,55 +2,56 @@
 <form [formGroup]="formulario" (ngSubmit)="enviarFormulario()">
   <div class="form-group">
     <label for="titulo">Título:</label>
-    <input type="text" id="titulo" formControlName="titulo">
+    <input type="text" id="titulo" formControlName="titulo" class="form-control">
   </div>
 
   <div class="form-group">
     <label for="descripcion">Descripción:</label>
-    <input type="text" id="descripcion" formControlName="descripcion">
+    <textarea id="descripcion" formControlName="descripcion" class="form-control"></textarea>
   </div>
 
   <div class="form-group">
     <label for="lenguaje">Lenguaje:</label>
-    <input type="text" id="lenguaje" formControlName="lenguaje">
+    <input type="text" id="lenguaje" formControlName="lenguaje" class="form-control">
   </div>
 
   <div class="form-group">
     <label for="dificultad">Dificultad:</label>
-    <input type="text" id="dificultad" formControlName="dificultad">
+    <input type="text" id="dificultad" formControlName="dificultad" class="form-control">
   </div>
 
   <div class="form-group">
-    <label for="solucion">Solucion:</label>
-    <input type="text" id="solucion" formControlName="solucion">
+    <label for="solucion">Solución:</label>
+    <textarea id="solucion" formControlName="solucion" class="form-control"></textarea>
   </div>
 
   <div class="form-group">
     <label for="explicacion">Explicación:</label>
-    <input type="text" id="explicacion" formControlName="explicacion">
+    <textarea id="explicacion" formControlName="explicacion" class="form-control"></textarea>
   </div>
 
   <div class="form-group">
     <label for="test">Test:</label>
-    <input type="text" id="test" formControlName="test">
+    <textarea id="test" formControlName="test" class="form-control"></textarea>
   </div>
 
-  <button type="submit" [disabled]="!formulario.valid">Enviar</button>
+  <button type="submit" [disabled]="!formulario.valid" class="btn btn-primary mt-1">Enviar</button>
 </form>
 
-<div class="ejercicios-lista">
-  <div *ngFor="let ejercicio of ejercicios" class="ejercicio-card">
+
+<div *ngFor="let ejercicio of ejercicios" class="row mb-4 mt-3">
+  <div class="col">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">{{ ejercicio.titulo }}</h5>
-        <p class="card-text">Descripción: {{ ejercicio.descripcion }}</p>
-        <p class="card-text">Lenguaje: {{ ejercicio.lenguaje }}</p>
-        <p class="card-text">Dificultad: {{ ejercicio.dificultad }}</p>
-        <p class="card-text">Solución: {{ ejercicio.solucion }}</p>
-        <p class="card-text">Explicación: {{ ejercicio.explicacion }}</p>
-        <p class="card-text">Test: {{ ejercicio.test }}</p>
-        <a routerLink="/ejercicio" class="btn btn-primary">Entrar a la actividad</a>
-        <button (click)="confirmarEliminacion(ejercicio.id)">Eliminar</button>
+        <p class="card-text"><strong>Descripción:</strong> {{ ejercicio.descripcion }}</p>
+        <p class="card-text"><strong>Lenguaje:</strong> {{ ejercicio.lenguaje }}</p>
+        <p class="card-text"><strong>Dificultad:</strong> {{ ejercicio.dificultad }}</p>
+        <p class="card-text"><strong>Solución:</strong> {{ ejercicio.solucion }}</p>
+        <p class="card-text"><strong>Explicación:</strong> {{ ejercicio.explicacion }}</p>
+        <p class="card-text"><strong>Test:</strong> {{ ejercicio.test }}</p>
+        <a [routerLink]="['/ejercicio', ejercicio.id]" class="btn btn-primary mr-2">Entrar a la actividad</a>
+        <button (click)="confirmarEliminacion(ejercicio.id)" class="btn btn-danger ms-2">Eliminar</button>
       </div>
     </div>
   </div>

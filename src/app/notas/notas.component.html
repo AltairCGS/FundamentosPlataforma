@@ -13,14 +13,14 @@
   </div>
   <div class="notas">
     <div class="estudiante">Estudiante 1</div>
-    <div class="actividad1"><a routerLink="/ejercicio">Actividad 1 para Estudiante 1</a></div>
-    <div class="actividad2"><a href="">Actividad 2 para Estudiante 1</a></div>
+    <div class="actividad1"><a [routerLink]="['/ejercicio', 1]">Actividad 1 para Estudiante 1</a></div>
+    <div class="actividad2"><a [routerLink]="['/ejercicio', 2]">Actividad 2 para Estudiante 1</a></div>
     <div class="actividad3"><a href="">Actividad 3 para Estudiante 1</a></div>
   </div>
   <div class="notas">
     <div class="estudiante">Estudiante 2</div>
-    <div class="actividad1"><a href="">Actividad 1 para Estudiante 2</a></div>
-    <div class="actividad2"><a href="">Actividad 2 para Estudiante 2</a></div>
+    <div class="actividad1"><a [routerLink]="['/ejercicio', 1]">Actividad 1 para Estudiante 2</a></div>
+    <div class="actividad2"><a [routerLink]="['/ejercicio', 2]">Actividad 2 para Estudiante 2</a></div>
     <div class="actividad3"><a href="">Actividad 3 para Estudiante 2</a></div>
   </div>
 </div>

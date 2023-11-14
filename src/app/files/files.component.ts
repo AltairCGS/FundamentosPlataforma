@@ -70,6 +70,7 @@ export class FilesComponent implements OnInit{
           }
         );
       } else {
+        this.mostrarFormularioModificacion = false;
         console.log('Modificación cancelada.');
       }
     }

@@ -35,7 +35,7 @@ const routes: Routes = [
         component: NotasComponent
       },
       {
-        path: 'ejercicio',
+        path: 'ejercicio/:id',
         component: EjercicioComponent
       },
       {

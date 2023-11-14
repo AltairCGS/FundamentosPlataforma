@@ -24,22 +24,36 @@ export class LoginComponent implements OnInit{
       if (isAuthenticated) {
         this.auth.user$.subscribe(user => {
           if (user) {
-            // Aquí puedes acceder a los datos del usuario
-            const nombre = user.name; // Obtén el nombre del usuario
-            const emal = user.email; // Obtén el correo del usuario
-            const apellido = user.family_name; // Sustituye con el atributo correcto que contiene el apellido
+            const email = user.email;
   
-            // Realiza la solicitud POST con los datos del usuario
-            this.http.post('http://localhost:8080/estudiante', {
-              nombre: nombre,
-              email: emal,
-              apellido: apellido
-            }).subscribe(
-              (response) => {
-                console.log('Solicitud POST exitosa', response);
+            // Realizar la solicitud GET para verificar si el estudiante ya existe
+            this.http.get<any[]>(`http://localhost:8080/estudiante/query?email=${email}`).subscribe(
+              (estudiantes) => {
+                console.log('Respuesta completa de la solicitud GET:', estudiantes);
+            
+                if (estudiantes && estudiantes.length === 0) {
+                  // Si no existe el estudiante, realizar la solicitud POST
+                  const nombre = user.name;
+                  const apellido = user.family_name;
+            
+                  this.http.post('http://localhost:8080/estudiante', {
+                    nombre: nombre,
+                    email: email,
+                    apellido: apellido
+                  }).subscribe(
+                    (postResponse) => {
+                      console.log('Solicitud POST exitosa', postResponse);
+                    },
+                    (postError) => {
+                      console.error('Error en la solicitud POST', postError);
+                    }
+                  );
+                } else {
+                  console.log('El estudiante ya existe o hay un problema en la respuesta. No se realiza la solicitud POST.');
+                }
               },
               (error) => {
-                console.error('Error en la solicitud POST', error);
+                console.error('Error en la solicitud GET', error);
               }
             );
           }

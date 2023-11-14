@@ -1,19 +1,25 @@
-<div class="ejercicio" *ngFor="let ejercicio of ejercicioData.slice(0,1)">
+<div class="ejercicio" *ngIf="ejercicio">
   <div class="instrucciones">Instrucciones
     <div class="instrucciones-contenedor">
-      <p>{{ejercicio.descripcion}}</p>
+      <p>{{ ejercicio.descripcion }}</p>
     </div>
   </div>
   <div class="solucion">Solución
     <div class="form-floating">
-      <textarea class="form-control textarea-full-size" placeholder="Escribe tu solución aquí" [(ngModel)]="ejercicio.solucion">
-      </textarea>
-      <label for="solucionTextarea">Solución</label>
+      <textarea class="form-control textarea-full-size" placeholder="Escribe tu solución aquí" [(ngModel)]="ejercicio.solucion"></textarea>
     </div>
   </div>
-  <div class="explicacion">Explicaciones</div>
-  <div class="test">Test</div>
+  <div class="explicacion">Explicaciones
+    <div class="form-floating">
+      <textarea class="form-control textarea-full-size" placeholder="Escribe tu solución aquí" [(ngModel)]="ejercicio.explicacion"></textarea>
+    </div>
+  </div>
+  <div class="test">Test
+    <div class="form-floating">
+      <textarea class="form-control textarea-full-size" placeholder="Escribe tu solución aquí" [(ngModel)]="ejercicio.test" readonly [disabled]="true"></textarea>
+    </div>
+  </div>
   <div class="guardar">
-    <button (click)="guardarEjercicio(ejercicio)">Guardar</button>
+    <button type="button" class="btn btn-primary" (click)="guardarEjercicio(ejercicio)">Guardar</button>
   </div>
 </div>

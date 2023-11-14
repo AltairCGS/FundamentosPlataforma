@@ -36,6 +36,8 @@ export class EjerciciosComponent {
       this.http.post('http://localhost:8080/ejercicio', formData).subscribe(
         (response) => {
           console.log('Solicitud POST exitosa', response);
+          this.actualizarLista()
+          this.formulario.reset()
 
         },
         (error) => {
@@ -85,5 +87,6 @@ export class EjerciciosComponent {
       this.ejercicios = data;
     });
   }
+  
 
 }

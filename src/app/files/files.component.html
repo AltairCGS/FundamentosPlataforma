@@ -1,4 +1,4 @@
-<form [formGroup]="formulario" (ngSubmit)="enviarFormulario()">
+<!-- <form [formGroup]="formulario" (ngSubmit)="enviarFormulario()">
   <div class="form-group">
     <label for="nombre">Nombre:</label>
     <input type="text" id="nombre" formControlName="nombre">
@@ -15,34 +15,74 @@
   </div>
 
   <button type="submit" [disabled]="!formulario.valid">Enviar</button>
+</form> -->
+
+<form [formGroup]="formulario" (ngSubmit)="enviarFormulario()" class="needs-validation" novalidate>
+  <div class="mb-3">
+    <label for="nombre" class="form-label">Nombre:</label>
+    <input type="text" id="nombre" class="form-control" formControlName="nombre" required>
+    <div class="invalid-feedback">
+      Por favor, ingresa un nombre.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="descripcion" class="form-label">Descripción:</label>
+    <input type="text" id="descripcion" class="form-control" formControlName="descripcion" required>
+    <div class="invalid-feedback">
+      Por favor, ingresa una descripción.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="url" class="form-label">URL:</label>
+    <input type="text" id="url" class="form-control" formControlName="url" required>
+    <div class="invalid-feedback">
+      Por favor, ingresa una URL válida.
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="!formulario.valid">Enviar</button>
 </form>
 
-<div *ngFor="let item of datos">
-  <h2>{{ item.nombre }}</h2>
-  <p>{{ item.descripcion }}</p>
-  <iframe width="560" height="315" [src]="getYouTubeEmbedUrl(item.url)"></iframe>
-  <button (click)="confirmarEliminacion(item.id)">Eliminar</button>
-  <button (click)="iniciarModificacion(item)">Modificar</button>
+<div class="row mt-3">
+  <div *ngFor="let item of datos" class="col-lg-4 col-md-6 mb-3">
+    <div class="card d-flex flex-column h-100">
+      <div class="card-body">
+        <h2 class="card-title">{{ item.nombre }}</h2>
+        <p class="card-text">{{ item.descripcion }}</p>
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" [src]="getYouTubeEmbedUrl(item.url)" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="mt-auto ms-3 mb-3">
+        <button class="btn btn-danger" (click)="confirmarEliminacion(item.id)">Eliminar</button>
+        <button class="btn btn-primary ms-3" (click)="iniciarModificacion(item)">Modificar</button>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div *ngIf="mostrarFormularioModificacion">
-  <form [formGroup]="formularioModificacion" (ngSubmit)="modificarElemento()">
-    <div class="form-group">
-      <label for="id">ID:</label>
-      <input type="text" id="id" formControlName="id" readonly>
-    </div>
-    <div class="form-group">
-      <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" formControlName="nombre">
-    </div>
-    <div class="form-group">
-      <label for="descripcion">Descripción:</label>
-      <input type="text" id="descripcion" formControlName="descripcion">
-    </div>
-    <div class="form-group">
-      <label for="url">URL:</label>
-      <input type="text" id="url" formControlName="url">
-    </div>
-    <button type="submit" [disabled]="!formularioModificacion.valid" (click)="confirmarModificacion()">Modificar</button>
-  </form>
+<div *ngIf="mostrarFormularioModificacion" class="card">
+  <div class="card-body">
+    <form [formGroup]="formularioModificacion" (ngSubmit)="modificarElemento()">
+      <div class="mb-3">
+        <label for="id" class="form-label">ID:</label>
+        <input type="text" id="id" formControlName="id" class="form-control" readonly>
+      </div>
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre:</label>
+        <input type="text" id="nombre" formControlName="nombre" class="form-control">
+      </div>
+      <div class="mb-3">
+        <label for="descripcion" class="form-label">Descripción:</label>
+        <input type="text" id="descripcion" formControlName="descripcion" class="form-control">
+      </div>
+      <div class="mb-3">
+        <label for="url" class="form-label">URL:</label>
+        <input type="text" id="url" formControlName="url" class="form-control">
+      </div>
+      <button type="submit" [disabled]="!formularioModificacion.valid" (click)="confirmarModificacion()" class="btn btn-primary">Modificar</button>
+    </form>
+  </div>
 </div>
